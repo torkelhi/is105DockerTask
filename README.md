@@ -1,3 +1,3 @@
 # is105DockerTask
 
-Fasti på dockerfile og docker-compose.yml file.
+Fasitt på dockerfile og docker-compose.yml file.
