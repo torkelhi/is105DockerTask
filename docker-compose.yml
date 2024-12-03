@@ -1,0 +1,30 @@
+version : "1"
+networks:
+  bob-alice:
+    ipam:
+      config:
+        - subnet: 172.22.0.0/24
+services:
+  alice:
+    tty: true
+    container_name: alice
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80
+    networks:
+      bob-alice:
+        ipv4_address: 172.22.0.4
+
+  bob:
+    tty: true
+    container_name: bob
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8001:81
+    networks:
+      bob-alice:
+        ipv4_address: 172.22.0.5
